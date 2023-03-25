@@ -1,45 +1,49 @@
+// Setup Modules
+import "dotenv/config";
+import { dirname } from "path";
+import { fileURLToPath } from "url";
+// Express Modules
+import express from 'express';
+import exphbs from 'express-handlebars';
 
-// import module `express`
-const express = require('express');
-
-// import module `hbs`
-const hbs = require('hbs');
-
-// import module `routes` from `./routes/routes.js`
-const routes = require('./routes/routes.js');
-
-// import module `database` from `./model/db.js`
-const db = require('./models/db.js');
+// Routes
+import routes from './src/routes/routes.js';
+// DB
+import db from './src/models/db.js';
 
 const app = express();
-const port = 9090;
+const port = process.env.SERVER_PORT ?? 3000; // if process.env.SERVER_PORT is undefined, use 3000 instead. (This is known as nullish coalescing)
 
-// set `hbs` as view engine
-app.set('view engine', 'hbs');
+// Define an async function called startServer
+const startServer = async () => {
+    // Express App Setup
+    // set `exphbs` as view engine
+    app.set('view engine', exphbs.engine({
+        extname: 'hbs';
+        defaultLayout: false
+    }));
 
-// sets `/views/partials` as folder containing partial hbs files
-hbs.registerPartials(__dirname + '/views/partials');
+    // set the folder `public` as folder containing static assets
+    // such as css, js, and image files
+    const __dirname = dirname(fileURLToPath(import.meta.url));
+    app.use(express.static(__dirname + "/public"));
 
-// parses incoming requests with urlencoded payloads
-app.use(express.urlencoded({extended: true}));
+    // Assign routes
+    app.use(routes);
 
-// set the folder `public` as folder containing static assets
-// such as css, js, and image files
-app.use(express.static('public'));
+    // If the route is not defined in the server, render `../views/error.hbs`.
+    // Always define this as the last middleware!
+    app.use((req, res) => {
+        res.render('error');
+    });
 
-// define the paths contained in `./routes/routes.js`
-app.use('/', routes);
+    // connects to the database
+    await db.connect();
 
-// if the route is not defined in the server, render `../views/error.hbs`
-// always define this as the last middleware
-app.use(function (req, res) {
-    res.render('error');
-});
+    // bind the server to a specific port
+    app.listen(port, () => {
+        console.log('app listening at port ' + port);
+    });
+}
 
-// connects to the database
-db.connect();
-
-// binds the server to a specific port
-app.listen(port, function () {
-    console.log('app listening at port ' + port);
-});
+startServer();
