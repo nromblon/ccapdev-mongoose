@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/arvention/ccapdev-mongoose.git"
   },
+  "type": "module",
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -17,8 +18,8 @@
   },
   "homepage": "https://github.com/arvention/ccapdev-mongoose#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "hbs": "^4.1.0",
-    "mongoose": "^5.9.6"
+    "mongoose": "^7.0.3"
   }
 }
