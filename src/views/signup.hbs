@@ -21,7 +21,13 @@
             E.g., <form id="signup" action="/register" method="post">
                 sends a POST request to the url `/register`
 
-            The alternative is to use the fetch API to send data in the request body (as a JSON, for example).
+            The alternative is to use the fetch API to send data in the request body:
+            1. Uncomment the script element below to use the fetch API approach
+            2. Remove the form's method attribute and its value
+            3. Edit `/src/routes/signupRouter.js:9` to use `express.json()` instead of `express.urlencoded()`
+        -->
+        <!-- 
+            <script src="/js/signup.js"></script> 
         -->
         <form id="signup" method="post">
             <input type="text" name="fName" id="fName" class="field" placeholder="First Name" required> <br>

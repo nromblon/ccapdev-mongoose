@@ -7,6 +7,7 @@ const signupRouter = Router();
 
 // Informs express that the request body will be in urlencoded format (https://expressjs.com/en/api.html#express.urlencoded)
 signupRouter.use(urlencoded({ extended: true }));
+// signupRouter.use(json()); // make sure to import json instead of urlencoded from the express module
 
 /*
   execute function getSignUp()
