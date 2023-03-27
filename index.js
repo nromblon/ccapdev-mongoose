@@ -53,6 +53,7 @@ const startServer = async () => {
 
   // connects to the database
   await db.connect();
+  console.log("Connected to: "+ process.env.MONGODB_URI);
 
   // bind the server to a specific port
   app.listen(port, () => {
