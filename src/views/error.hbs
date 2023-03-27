@@ -11,8 +11,14 @@
 
 <div id="container">
     <div id="content">
-        <h1 id="title"> 404 </h1>
+        <h1 id="title"> {{code}} </h1>
+        {{#if (isEqual code 404)}}
         <p> Sorry, file not found </p>
+        {{else if (isEqual code 500)}}
+        <p> An internal server error has occurred. </p>
+        {{else if (isEqual code 400)}}
+        <p> Bad Request, User not found.</p>
+        {{/if}}
     </div>
 </div>
 
