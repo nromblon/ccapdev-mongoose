@@ -1,9 +1,9 @@
 // Express
-import { Router } from 'express';
+import { Router } from "express";
 // Routers
-import signupRouter from './signupRouter.js';
-import profileRouter from './profileRouter.js';
-import successRouter from './successRouter.js';
+import signupRouter from "./signupRouter.js";
+import profileRouter from "./profileRouter.js";
+import successRouter from "./successRouter.js";
 
 const routes = Router();
 
@@ -11,8 +11,8 @@ const routes = Router();
     When a client sends an HTTP GET request for `/`,
     render the `index` view.
 */
-routes.get('/', (req, res) => {
-    res.render('index');
+routes.get("/", (req, res) => {
+  res.render("index");
 });
 
 /*
@@ -35,9 +35,9 @@ routes.use(profileRouter);
     Always define this as the last middleware!
 */
 routes.use((req, res) => {
-    res.render('error', {
-        code: 404
-    });
+  res.render("error", {
+    code: 404,
+  });
 });
 
 /*

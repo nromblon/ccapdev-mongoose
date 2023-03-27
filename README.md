@@ -1,4 +1,5 @@
 # ccapdev-mongoose
+
 Mongoose Tutorial for CCAPDEV1920T2
 
 This repository will help you integrate Mongoose to your web applications. This web application has two main features - a sign up feature and a profile feature. Upon signing-up, registered users may view their profile.
@@ -15,21 +16,26 @@ Each folder and file in this repository is properly documented. You may read the
 - [index.js](https://github.com/arvention/ccapdev-mongoose/blob/master/index.js) - The main entry point of the web application.
 
 ## Follow the steps below to set-up and study this repository:
+
 1. Clone the repository either by downloading the contents of the repository [here](https://github.com/arvention/ccapdev-mongoose/archive/master.zip), or using the command below (Note: git should be installed in your system for this to work).
+
 ```
 git clone https://github.com/arvention/ccapdev-mongoose
 ```
+
 2. Open Command Prompt
 3. Navigate to the project folder - the folder containing the contents of the cloned or downloaded repository.
 4. Run the command `npm install` to initialize and install all necessary modules used in the project.
 
 5. We may now run our server. To do this, we run the command `node index.js`. Upon running the command, your Command Prompt should display the following statement:
+
 ```
 app listening at port 9090
 Connected to: mongodb://localhost:27017/ccapdev-mongoose
 ```
 
 6. Let's test our web application. Go to the link below to access the web application:
+
 ```
 http://localhost:9090/
 ```
@@ -122,9 +128,11 @@ The picture below displays the success screen for the details that we have enter
 ![alt text](https://github.com/arvention/ccapdev-mongoose/blob/master/success.png "Success Page")
 
 If you have entered the same sample details, the URL displayed by your web browser should be:
+
 ```
 http://localhost:9090/success?fName=Ned&lName=Stark&idNum=11312345
 ```
+
 9. Click the link to your profile.
 
 The picture below displays the profile screen of the user which we have registered earlier:
