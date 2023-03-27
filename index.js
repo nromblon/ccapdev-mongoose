@@ -35,17 +35,17 @@ const startServer = async () => {
   app.set("views", "./src/views");
 
   /*
-        set the folder `public` as folder containing static assets
-        such as css, js, and image files
-    */
+    set the folder `public` as folder containing static assets
+    such as css, js, and image files
+  */
   const __dirname = dirname(fileURLToPath(import.meta.url));
   app.use(express.static(__dirname + "/public"));
 
   /*
-        A 'favicon' is the icon that appears on the browser's tab when viewing the web application.
-        See the following link for a favicon generator: https://favicon.io/favicon-generator/
-        This implementation specifically uses the serve-favicon package: https://www.npmjs.com/package/serve-favicon
-    */
+    A 'favicon' is the icon that appears on the browser's tab when viewing the web application.
+    See the following link for a favicon generator: https://favicon.io/favicon-generator/
+    This implementation specifically uses the serve-favicon package: https://www.npmjs.com/package/serve-favicon
+  */
   app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
 
   // Assign routes (uses src/routes/index.js)

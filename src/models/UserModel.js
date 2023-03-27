@@ -24,9 +24,9 @@ const UserSchema = new mongoose.Schema({
 const User = mongoose.model("User", UserSchema);
 
 /*
-    exports a mongoose.model object based on `UserSchema` (defined above)
-    when another script exports from this file
-    This model executes CRUD operations
-    to collection `users` -> plural of the argument `User`
+  exports a mongoose.model object based on `UserSchema` (defined above)
+  when another script exports from this file
+  This model executes CRUD operations
+  to collection `users` -> plural of the argument `User`
 */
 export default User;

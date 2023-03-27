@@ -6,8 +6,8 @@ const url = process.env.MONGODB_URI;
 
 export default {
   /*
-        connects to database
-    */
+    connects to database
+  */
   connect: () => {
     return mongoose.connect(url);
   },

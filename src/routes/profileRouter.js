@@ -6,10 +6,10 @@ import User from "../models/UserModel.js";
 const profileRouter = Router();
 
 /*
-    When a client sends an HTTP GET request for `/profile/:idNum`,
-    where `idNum` is a parameter,
-    retrieve the User with the specified `idNum` from the database
-    and display the details inside the `profile` view.
+  When a client sends an HTTP GET request for `/profile/:idNum`,
+  where `idNum` is a parameter,
+  retrieve the User with the specified `idNum` from the database
+  and display the details inside the `profile` view.
 */
 profileRouter.get("/profile/:idNum", (req, res) => {
   // query where `idNum` is equal to URL parameter `idNum`
@@ -19,15 +19,15 @@ profileRouter.get("/profile/:idNum", (req, res) => {
   const projection = "fName lName idNum";
 
   /*
-        calls the function findOne()
-        defined in the `database` object in `../models/db.js`
-        this function searches the collection `users`
-        based on the value set in object `query`
-        the third parameter is a string containing fields to be returned
-        the fourth parameter is a callback function
-        this called when the database returns a value
-        saved in variable `result`
-    */
+    calls the function findOne()
+    defined in the `database` object in `../models/db.js`
+    this function searches the collection `users`
+    based on the value set in object `query`
+    the third parameter is a string containing fields to be returned
+    the fourth parameter is a callback function
+    this called when the database returns a value
+    saved in variable `result`
+  */
   User.findOne(query, projection)
     .then((result) => {
       // If the user does not exist in the database:
