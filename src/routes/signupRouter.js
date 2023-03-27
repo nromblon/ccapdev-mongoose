@@ -66,7 +66,9 @@ signupRouter.post("/signup", (req, res) => {
     .catch((err) => {
       console.error(err);
       res.status = 500;
-      res.render("error");
+      res.render("error", {
+        code: 500
+      });
     });
 });
 
