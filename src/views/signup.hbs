@@ -13,6 +13,11 @@
 <div id="container">
     <div id="content">
         <h1 id="title"> Sign Up. </h1>
+        <!-- 
+            Form attribute `method`, when set to "post", will send a post request to the same URL as the current page with the contents of the inputfields.
+            The request body data is encoded in `urlencoded` (or "application/x-www-form-urlencoded") format.
+            As such, the express.urlencoded() middleware (instead of express.json()) must be used to parse the data.
+        -->
         <form id="signup" method="post">
             <input type="text" name="fName" id="fName" class="field" placeholder="First Name" required> <br>
             <input type="text" name="lName" id="lName" class="field" placeholder="Last Name" required> <br>
