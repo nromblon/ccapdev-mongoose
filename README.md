@@ -1,6 +1,6 @@
 # ccapdev-mongoose
 
-Mongoose Tutorial for CCAPDEV2223T2
+Mongoose Tutorial for CCAPDEV AY 22-23 T2
 
 This repository will help you integrate Mongoose to your web applications. This web application has two main features - a sign up feature and a profile feature. Upon signing-up, registered users may view their profile.
 
